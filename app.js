@@ -5,11 +5,13 @@ const result = document.querySelector('.result');
 
 btn.addEventListener('click', function() {
     if(num1.value.trim() === '' || num2.value.trim() === '') {
+        result.classList.add('error');
         result.textContent = `One or more of your numbers are invalid. Please check your input.`;
     } else {
-    let total = Number(num1.value) + Number(num2.value);
-    result.textContent = `${num1.value} + ${num2.value} = ${total}`;
-    num1.value = '';
-    num2.value = '';
+        result.classList.remove('error');
+        let total = Number(num1.value) + Number(num2.value);
+        result.textContent = `${num1.value} + ${num2.value} = ${total}`;
+        num1.value = '';
+        num2.value = '';
     }
 })
