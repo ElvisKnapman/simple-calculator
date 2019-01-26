@@ -6,12 +6,19 @@ const result = document.querySelector('.result');
 btn.addEventListener('click', function() {
     if(num1.value.trim() === '' || num2.value.trim() === '') {
         result.classList.add('error');
+        result.classList.add('effect');
         result.textContent = `One or more of your numbers are invalid. Please check your input.`;
     } else {
         result.classList.remove('error');
+        result.classList.add('effect');
         let total = Number(num1.value) + Number(num2.value);
         result.textContent = `${num1.value} + ${num2.value} = ${total}`;
         num1.value = '';
         num2.value = '';
     }
+})
+
+result.addEventListener('animationend', function(event) {
+    console.log('animation finished');
+    result.classList.remove('effect');
 })
