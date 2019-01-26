@@ -8,21 +8,18 @@ html {
     font-size: 10px;
 }
 
+body {
+    margin: 0;
+}
+
+
 .header {
-    margin: 20px 0;
+    width: 50%;
+    margin: 20px auto;
     text-align: center;
     color: #000;
     font-family: 'Montserrat', sans-serif;
     font-size: 3.8rem;
-}
-
-.content {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 95%;
-    text-align: center;
-    margin: auto;
 }
 
 /* .content, .form, .result {
@@ -30,14 +27,19 @@ html {
 } */
 
 .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    float: left;
+    width: 45%;
+    text-align: center;
+}
+
+input {
+    margin: auto;
 }
 
 
 .btn {
-    margin-top: 25px;
+    width: 30%;
+    margin: auto;
     padding: 20px 10px;
     background-color: #39C;
     text-align: center;
@@ -49,20 +51,25 @@ html {
     letter-spacing: .6rem;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     user-select: none;
+    transition: all .3s;
+    cursor: pointer;
+    float: left;
 }
 
 .btn:hover {
-    background-color: #000;
-    color: #FFF;
+    transform: scale(1.06);
 }
 
 .btn:active {
     box-shadow: 0px 0px 8px rgba(0, 0, 0, .4);
 }
 
+.num1 {
+    margin-bottom: 15px;
+}
+
 .num1, .num2 {
     display: block;
-    margin-bottom: 15px;
     padding: 12px;
     font-size: 2.3rem;
     font-family: 'Montserrat', sans-serif;
@@ -76,14 +83,42 @@ html {
 }
 
 .result {
-    justify-content: center;
-    align-items: center;
+    width: 70%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
     font-family: 'Montserrat', sans-serif;
     font-size: 3.3rem;
     color: #000;
-    width: 50%;
+    text-align: center;
 }
 
 .error {
     color: rgb(207, 27, 27);
+    transition: all .08s;
+}
+
+.wrapper {
+    width: 95%;
+    margin: auto;
+}
+
+.effect {
+    animation: fadeIn ease 1.3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.clearfix {
+    display: table;
+    content: '';
+    clear: both;
 }
